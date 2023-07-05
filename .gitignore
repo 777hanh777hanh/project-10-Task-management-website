@@ -1,0 +1,6 @@
+# folders
+.history/
+.vscode/
+
+# files
+*:Zone.Identifier
