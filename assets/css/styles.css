@@ -1,118 +1,230 @@
 :root {
-    --primary-color: #0cce84;
-    --secondary-color: linear-gradient(90deg, #eb9204 -33.14%, #83e868 116.38%);
-    --background-color: #131517;
-    --background-color--black: #282c30;
-    --text-color: #9ea1a7;
-    --white-color: #f9f9f9;
-    --font-family: 'Sora', system-ui;
-    --wrap-width: 1160px;
+  --primary-color: #0cce84;
+  --secondary-color: linear-gradient(90deg, #eb9204 -33.14%, #83e868 116.38%);
+  --background-color: #131517;
+  --background-color--black: #282c30;
+  --text-color: #9ea1a7;
+  --white-color: #f9f9f9;
+  --font-family: "Sora", system-ui;
+  --wrap-width: 1160px;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: stretch;
-    font-size: 1.6rem;
-    font-family: 'Sora', sans-serif;
-    background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  font-size: 1.6rem;
+  font-family: "Sora", sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
 }
 
 .wrapper {
-    margin: 0 auto;
-    width: var(--wrap-width);
-    max-width: calc(100% - 56px);
+  margin: 0 auto;
+  width: var(--wrap-width);
+  max-width: calc(100% - 56px);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn {
-    border: none;
-    outline: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
 }
 .btn--outline {
-    border: 2px solid var(--background-color--black);
+  border: 2px solid var(--background-color--black);
 }
 .btn:hover {
-    cursor: pointer;
-    border: none;
+  cursor: pointer;
+  border: none;
 }
 
 .header {
-    position: sticky;
-    margin-top: 20px;
-    padding: 20px 0;
-    top: 0;
-    width: 100%;
+  position: sticky;
+  margin-top: 20px;
+  padding: 20px 0;
+  top: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  z-index: 1;
 }
 .header__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .header .logo {
-    width: 80px;
+  width: 80px;
 }
 .header .logo__img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .header .navbar__list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    -moz-column-gap: 12px;
-    column-gap: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
 }
 .header .navbar__item {
-    padding: 0 12px;
-    color: var(--text-color);
-    font-size: 1.6rem;
-    line-height: 1.5;
-    font-weight: 400;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    cursor: pointer;
+  padding: 0 12px;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }
 .header .navbar__item.active {
-    position: relative;
-    color: var(--white-color);
+  position: relative;
+  color: var(--white-color);
 }
 .header .navbar__item.active::after {
-    position: absolute;
-    display: block;
-    bottom: -3px;
-    width: 21px;
-    height: 2px;
-    content: '';
-    background: var(--primary-color);
+  position: absolute;
+  display: block;
+  left: 12px;
+  bottom: -3px;
+  width: 21px;
+  height: 2px;
+  content: "";
+  background: var(--primary-color);
 }
 .header .navbar__item:not(.active):hover {
-    color: var(--white-color);
+  color: var(--white-color);
 }
 .header__cta {
-    width: 110px;
-    height: 40px;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-image: var(--secondary-color);
+  width: 110px;
+  height: 40px;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: var(--secondary-color);
 }
 .header__cta:hover {
-    color: var(--white-color);
-    background-clip: border-box;
+  color: var(--white-color);
+  background-clip: border-box;
 }
+
+.hero {
+  margin-top: 70px;
+  width: 100%;
+}
+.hero__inner {
+  position: relative;
+  padding-top: 60px;
+}
+.hero__slogan {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 780px;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.167;
+  color: var(--white-color);
+}
+.hero__highlight {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: var(--secondary-color);
+}
+.hero__desc {
+  margin: 34px auto 0;
+  width: 447px;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.625;
+}
+.hero__cta {
+  margin-top: 44px;
+  justify-content: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.hero__btn {
+  width: 199px;
+  height: 54px;
+  color: var(--white-color);
+  font-size: 1.6rem;
+  line-height: 1.625;
+  background: var(--background-color--black);
+}
+.hero__btn:hover {
+  background: var(--secondary-color);
+}
+.hero__cards {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 111px auto 0;
+  padding-bottom: 146px;
+}
+.hero__card {
+  max-width: 848px;
+  max-height: 366px;
+}
+.hero__card--side {
+  position: absolute;
+  max-width: 216px;
+  min-height: 335px;
+  left: 85px;
+  top: 177px;
+}
+.hero__img {
+  width: 100%;
+  height: 100%;
+}
+.hero__effect {
+  position: absolute;
+}
+.hero__effect--vertical {
+  width: 121px;
+  height: 315px;
+}
+.hero__effect-dot {
+  width: 89px;
+  height: 89px;
+}
+.hero__effect-dot-l {
+  width: 154px;
+  height: 154px;
+}
+.hero__effect--top-left {
+  top: 0;
+  left: 28px;
+}
+.hero__effect--top-right {
+  top: 0;
+  right: 28px;
+}
+.hero__effect--bottom-left {
+  bottom: 73px;
+  left: 50px;
+}
+.hero__effect--bottom-right {
+  right: 70px;
+  bottom: 200px;
+}/*# sourceMappingURL=styles.css.map */
