@@ -1,6 +1,10 @@
 # folders
 .history/
 .vscode/
+.sass-cache/
 
 # files
 *:Zone.Identifier
+*.css.map
+*.sass.map
+*.scss.map
