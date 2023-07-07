@@ -5,6 +5,7 @@
     --background-color: #131517;
     --background-color--black: #282c30;
     --background-color--gray: #858b93;
+    --background-color--dark-blue: #272633;
     --text-color: #9ea1a7;
     --text-color-white: #f9f9f9;
     --primary-color-dark-yellow: #ef8f00;
@@ -14,7 +15,7 @@
     --font-family: 'Sora', system-ui;
 
     // Box
-    --wrap-width: 1160px;
+    --wrap-width: 1096px;
 }
 
 html *::-webkit-scrollbar {
@@ -84,6 +85,13 @@ body {
     }
 }
 
+.highlight {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: var(--secondary-color);
+}
+
 // Header
 .header {
     position: sticky;
@@ -93,6 +101,10 @@ body {
     width: 100%;
     background-color: var(--background-color);
     z-index: 1;
+
+    .wrapper {
+        width: 1143px;
+    }
 
     &__inner {
         display: flex;
@@ -127,6 +139,7 @@ body {
             font-weight: 400;
             user-select: none;
             cursor: pointer;
+            transition: 0.2s ease;
 
             &.active {
                 position: relative;
@@ -166,10 +179,18 @@ body {
     }
 }
 
+.main {
+    width: 100%;
+}
+
 // Hero
 .hero {
     padding: 70px 0;
     width: 100%;
+
+    .wrapper {
+        width: 1144px;
+    }
 
     &__inner {
         position: relative;
@@ -187,10 +208,20 @@ body {
     }
 
     &__highlight {
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: var(--secondary-color);
+        display: inline-block;
+        position: relative;
+
+        &-img {
+            position: absolute;
+            user-select: none;
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            top: -10px;
+            left: -10px;
+            object-position: center;
+            object-fit: cover;
+            z-index: -1;
+        }
     }
 
     &__desc {
@@ -255,6 +286,7 @@ body {
 
     &__effect {
         position: absolute;
+        z-index: -1;
 
         &--vertical {
             width: 121px;
@@ -361,5 +393,138 @@ body {
         font-size: 1.6rem;
         font-weight: 400;
         line-height: 1.625;
+    }
+}
+
+// overView
+.overView {
+    padding: 70px 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    .wrapper {
+        width: 1160px;
+    }
+
+    .overView__inner {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 537px 1fr;
+        grid-template-areas:
+            'info elements'
+            'numbers elements ';
+
+        column-gap: 21px;
+    }
+
+    .overView__info {
+        margin-top: 17px;
+        grid-area: info;
+    }
+
+    .overView__heading {
+        max-width: 368px;
+        font-size: 4rem;
+        font-weight: 600;
+        line-height: 1.26;
+        color: var(--text-color-white, #f9f9f9);
+    }
+
+    .overView__desc {
+        margin-top: 22px;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.625;
+        color: var(--background-color--gray, #858b93);
+    }
+
+    .overView__numbers {
+        margin-top: 86px;
+        grid-area: numbers;
+
+        &-list {
+            display: flex;
+            column-gap: 17px;
+        }
+
+        &-item {
+            align-items: center;
+        }
+    }
+
+    .numbers-item__values {
+        display: flex;
+        width: 132px;
+        height: 127px;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        border-radius: 9px;
+        background: var(--background-color--dark-blue, #272633);
+        transition: 0.2s ease;
+
+        &.active {
+            border-radius: 9px;
+            background: linear-gradient(191deg, #ae8ef9 7.3%, #ef8f00 60.81%, #6aea5c 100%);
+
+            & .numbers-item__desc {
+                color: var(--text-color-white, #f9f9f9);
+            }
+        }
+    }
+
+    .numbers-item__number {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 1.26;
+        color: var(--text-color-white, #f9f9f9);
+    }
+
+    .numbers-item__desc {
+        margin-top: 16px;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.625;
+        color: var(--background-color--gray, #858b93);
+    }
+
+    .overView__pagination {
+        display: flex;
+        margin-bottom: 28px;
+        justify-content: center;
+        column-gap: 5px;
+
+        &-item {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--text-color-white);
+            opacity: 0.4;
+            transition: 0.2s ease;
+
+            &.active {
+                background: var(--primary-color-dark-yellow);
+                opacity: 1;
+            }
+        }
+    }
+
+    .overView__elements {
+        position: relative;
+        grid-area: elements;
+        min-height: 525px;
+        background: red;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url(/assets/images/overView/overView-background.png) no-repeat;
+            background-position: right;
+            background-size: contain;
+        }
     }
 }
