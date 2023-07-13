@@ -34,3 +34,71 @@ function toggleActiveOverView(ele, index) {
     overViewValues[index].classList.add('active');
     overViewDots[index].classList.add('active');
 }
+
+// start -----  navigate of testimonials //
+
+const testimonials = document.querySelectorAll('.testimonial__item');
+const prevButtonTestimonial = document.querySelectorAll('.testimonial__chevron--left');
+const nextButtonTestimonial = document.querySelectorAll('.testimonial__chevron--right');
+
+// Get gap of testimonialBlock
+
+// handle
+const range = Math.ceil(testimonials.length);
+let currentRange = 1;
+const testimonialBlock = document.querySelector('.testimonial__block');
+handleButtonPrev();
+handleButtonNext();
+function handlePrevTestimonial() {
+    const testimonialBlockColumnGap = window.getComputedStyle(testimonialBlock).columnGap.replace('px', '');
+    if (currentRange > 1) {
+        nextButtonTestimonial.forEach((btn) => btn.classList.remove('disabled'));
+        currentRange -= 1;
+        testimonials.forEach((testimonial) => {
+            testimonial.style.transform = `translateX(calc(${100 * -(currentRange - 1)}% + ${
+                testimonialBlockColumnGap * -(currentRange - 1)
+            }px))`;
+        });
+    }
+    handleButtonPrev();
+}
+function handleNextTestimonial() {
+    const testimonialBlockColumnGap = window.getComputedStyle(testimonialBlock).columnGap.replace('px', '');
+    prevButtonTestimonial.forEach((btn) => btn.classList.remove('disabled'));
+    if (currentRange < testimonials.length) {
+        testimonials.forEach((testimonial) => {
+            testimonial.style.transform = `translateX(calc(-${100 * currentRange}% - ${
+                testimonialBlockColumnGap * currentRange
+            }px))`;
+        });
+        currentRange += 1;
+    }
+    handleButtonNext();
+}
+
+function handleButtonPrev() {
+    if (currentRange === 1) {
+        prevButtonTestimonial.forEach((btn) => btn.classList.add('disabled'));
+        prevButtonTestimonial.forEach((btn) => btn.addEventListener('click', (e) => e.preventDefault()));
+    }
+}
+function handleButtonNext() {
+    if (currentRange === testimonials.length) {
+        nextButtonTestimonial.forEach((btn) => btn.classList.add('disabled'));
+        nextButtonTestimonial.forEach((btn) => btn.addEventListener('click', (e) => e.preventDefault()));
+    }
+}
+
+prevButtonTestimonial.forEach((btn) => btn.addEventListener('click', handlePrevTestimonial));
+nextButtonTestimonial.forEach((btn) => btn.addEventListener('click', handleNextTestimonial));
+
+window.onresize = () => {
+    const testimonialBlockColumnGap = window.getComputedStyle(testimonialBlock).columnGap.replace('px', '');
+    testimonials.forEach((testimonial) => {
+        testimonial.style.transform = `translateX(calc(${100 * -(currentRange - 1)}% + ${
+            testimonialBlockColumnGap * -(currentRange - 1)
+        }px))`;
+    });
+};
+
+// end -----  navigate of testimonials //

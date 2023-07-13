@@ -1117,6 +1117,12 @@ body {
         font-size: 4rem;
         font-weight: 600;
         line-height: 1.25;
+
+        // line-clamp-3
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden !important;
     }
 
     .blog__block {
@@ -1235,5 +1241,186 @@ body {
         width: 10px;
         height: 6px;
         color: var(--bg-color);
+    }
+}
+
+// testimonial
+.testimonial {
+    .wrapper {
+        width: 1219px;
+    }
+
+    .testimonial__inner {
+        padding: 70px 0;
+    }
+
+    .testimonial__heading {
+        text-align: center;
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.33333;
+        display: none;
+    }
+
+    .highlight {
+        background-image: linear-gradient(#f8d100 100%, #ffffff00);
+    }
+
+    .testimonial__block {
+        display: flex;
+        column-gap: 32px;
+        overflow: hidden;
+        justify-content: flex-start;
+    }
+
+    .testimonial__item {
+        display: flex;
+        flex-direction: column;
+        min-width: 385px;
+        padding: 30px 40px 26px;
+        width: 100%;
+        border: 1px solid var(--background-color--black, #282c30);
+        border-radius: 10px;
+        transition: all 0.2s linear;
+
+        &:hover {
+            background: var(--background-color--black, #282c30);
+
+            .testimonial__icon {
+                rotate: -180deg;
+                color: var(--primary-color);
+            }
+
+            .testimonial__item-desc {
+                color: #bcc6d0;
+            }
+        }
+    }
+
+    .testimonial__icon {
+        display: block;
+        margin-left: auto;
+        margin-right: 40px;
+        color: var(--background-color--black, #282c30);
+        transition: all 0.15s linear;
+    }
+
+    .testimonial__item-desc {
+        margin-top: 27px;
+        margin-bottom: 22px;
+        color: var(--background-color--gray, #858b93);
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.625;
+
+        // line-clamp-4
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .testimonial__author {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: auto;
+    }
+
+    .testimonial__author-avatar {
+        margin-right: 20px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        object-fit: cover;
+        user-select: none;
+        -webkit-user-select: none;
+        -drag: none;
+        -webkit-user-drag: none;
+    }
+
+    .testimonial__author-name {
+        color: var(--text-color-white, #f9f9f9);
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.555555555555556;
+    }
+
+    .testimonial__author-job {
+        color: var(--background-color--gray, #858b93);
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    .testimonial__author-rate {
+        margin-left: auto;
+        margin-bottom: 12px;
+        align-self: flex-end;
+        color: var(--primary-color-dark-yellow, #ef8f00);
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    .testimonial__rate-icon {
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+    }
+
+    .testimonial__navigate {
+        &--mobile {
+            display: none;
+
+            .testimonial__chevron-group {
+                margin: 11px 8px 24px 0;
+            }
+        }
+    }
+
+    .testimonial__chevron-group {
+        display: flex;
+        margin-right: 60px;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 19px;
+    }
+
+    .testimonial__chevron {
+        display: flex;
+        padding: 6px 12px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: var(--background-color--gray);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--primary-color-dark-yellow);
+        }
+
+        &--left {
+            rotate: 180deg;
+        }
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.3;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .testimonial__block {
+            column-gap: 0;
+        }
+        .testimonial__item {
+            width: 100%;
+            flex-shrink: 0;
+        }
     }
 }
