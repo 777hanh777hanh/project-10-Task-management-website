@@ -13,7 +13,44 @@
 @media screen and (max-width: 991px) {
     // Main
     main {
-        display: none;
+        // hero
+        .hero {
+        }
+
+        // service
+        .service {
+            display: none;
+        }
+
+        // overView
+        .overView {
+            display: none;
+        }
+
+        // feature
+        .feature {
+            display: none;
+        }
+
+        // about
+        .about {
+            display: none;
+        }
+
+        // feature-intro
+        .feature-intro {
+            display: none;
+        }
+
+        // blog
+        .blog {
+            display: none;
+        }
+
+        // testimonial
+        .testimonial {
+            display: none;
+        }
     }
 
     // Footer
@@ -27,10 +64,27 @@
     .show-on-mobile {
         display: none;
     }
+
+    .main {
+        .hero {
+            padding: 40px 0;
+        }
+
+        .hero__highlight-img {
+            width: calc(100% + 20px);
+            height: 100%;
+            top: 0px;
+            overflow: visible;
+        }
+    }
 }
 
 // Mobile ( width < 768px )
 @media screen and (max-width: 767px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
     // header
     .header {
         .wrapper {
@@ -121,6 +175,57 @@
             ~ .menu__drawer {
                 transform: translateX(0);
             }
+        }
+    }
+
+    // hero
+    .hero {
+        padding: 28px 0 40px;
+
+        .hero__inner {
+            padding-top: 18px;
+        }
+
+        .hero__slogan {
+            margin-top: 18px;
+            font-size: 3rem;
+            max-width: 297px;
+        }
+
+        .hero__desc {
+            display: none;
+        }
+
+        .hero__highlight-img {
+            width: calc(100% + 20px);
+            height: 100%;
+            top: 0px;
+            overflow: visible;
+        }
+
+        .hero__effect--top-left {
+            height: 64px;
+            transform: translate(40%, 48px);
+        }
+
+        .hero__effect--top-right {
+            height: 64px;
+            transform: translateY(200%);
+        }
+
+        .hero__cta {
+            flex-direction: column;
+            row-gap: 18px;
+        }
+
+        .hero__btn {
+            width: 143px;
+            height: 39px;
+            font-size: 1.2rem;
+        }
+
+        .hero__cards {
+            margin-top: 82px;
         }
     }
 }

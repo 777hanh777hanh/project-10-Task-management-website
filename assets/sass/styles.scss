@@ -261,7 +261,7 @@ body {
 
     &__desc {
         margin: 34px auto 0;
-        width: 447px;
+        max-width: 447px;
         text-align: center;
         font-size: 1.6rem;
         font-weight: 400;
@@ -303,29 +303,33 @@ body {
     }
 
     &__cards {
+        position: relative;
         display: flex;
         justify-content: center;
         margin: 111px auto 0;
-        width: 100%;
-        height: 512px;
+        max-width: 1035px;
     }
 
     .cards {
         position: relative;
-        max-width: 848px;
+        max-width: 923px;
+        width: 90%;
+        padding-bottom: 16%;
         height: 100%;
     }
 
     .card {
-        width: 100%;
-        height: 100%;
+        margin-left: auto;
+        max-width: 848px;
+        width: 92%;
+        max-height: 366px;
 
         &--side {
             position: absolute;
-            max-width: 216px;
+            width: 23.4%;
             max-height: 335px;
             bottom: 0;
-            left: -75px;
+            left: 0;
         }
     }
 
@@ -338,9 +342,19 @@ body {
         position: absolute;
         z-index: -1;
 
+        &-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
         &--vertical {
-            width: 121px;
-            height: 315px;
+            width: 10.6%;
+        }
+
+        &--horizontal {
+            width: 8.08%;
+            rotate: -90deg;
         }
 
         &-dot {
@@ -364,12 +378,15 @@ body {
         }
 
         &--bottom-left {
+            width: 11.5%;
             bottom: 73px;
-            left: 50px;
+            left: 0px;
         }
         &--bottom-right {
-            right: 70px;
-            bottom: 200px;
+            width: 15%;
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 }
