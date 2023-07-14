@@ -601,6 +601,12 @@ body {
         }
     }
 
+    .overView__elements-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
     .overView__circles {
         position: relative;
         display: block;
