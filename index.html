@@ -8,6 +8,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
         <!-- Fonts -->
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,10 +64,21 @@
 
                     <!-- CTA -->
                     <button class="btn btn--outline header__cta">Sign In</button>
+
+                    <!-- MENU Tablet/Mobile -->
+                    <div class="menu show-on-mobile">
+                        <input type="checkbox" name="" id="menu" class="menu__checkbox" />
+                        <label for="menu" class="menu__btn">
+                            <img src="./assets/images/icons/menu-ic.svg" alt="" class="menu__icon" />
+                        </label>
+                        <label for="menu" class="overlay"> </label>
+                        <ul class="menu__drawer"></ul>
+                    </div>
                 </div>
             </div>
         </header>
 
+        <!-- Main -->
         <main class="main">
             <!-- Hero -->
             <section class="hero">
@@ -111,11 +123,6 @@
                                 </mark>
                                 Way More Easier Than Ever
                             </h1>
-                            <!-- <img loading="lazy"
-                                src="./assets/images/effects/effect-00.png"
-                                alt=""
-                                class="hero__effect-box"
-                            /> -->
                         </div>
                         <p class="hero__desc">
                             The online collaborative management platform to bring more efficiency and
@@ -1212,6 +1219,7 @@
             </section>
         </main>
 
+        <!-- Footer -->
         <footer class="footer">
             <div class="wrapper">
                 <div class="footer__inner">

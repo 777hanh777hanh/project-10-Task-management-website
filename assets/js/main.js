@@ -1,19 +1,31 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const navbar_items = $$('.navbar__item');
+// Copy navbar from PC to Tablet/Mobile
+$('.menu__drawer').innerHTML = $('.navbar .navbar__list').innerHTML;
+
+const navbar_items = $$('.navbar .navbar__item');
+const menu__items = $$('.menu__drawer .navbar__item');
 const overViewDots = $$('.overView__pagination-item');
 const overViewValues = $$('.numbers-item__values');
 
-navbar_items.forEach((item) => {
+navbar_items.forEach((item, index) => {
     item.addEventListener('click', () => {
-        toggleActiveNav(item);
+        toggleActiveNav(index);
     });
 });
 
-function toggleActiveNav(ele) {
-    $('.navbar__item.active').classList.remove('active');
-    ele.classList.add('active');
+menu__items.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        toggleActiveNav(index);
+    });
+});
+
+function toggleActiveNav(index) {
+    $('.navbar .navbar__item.active').classList.remove('active');
+    $('.menu__drawer .navbar__item.active').classList.remove('active');
+    navbar_items[index].classList.add('active');
+    menu__items[index].classList.add('active');
 }
 
 overViewDots.forEach((item, index) => {

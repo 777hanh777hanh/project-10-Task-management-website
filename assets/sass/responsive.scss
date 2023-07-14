@@ -1,0 +1,126 @@
+// PC (width > 992px)
+@media screen and (min-width: 992px) {
+    .hide-on-pc {
+        display: none;
+    }
+
+    .show-on-mobile {
+        display: none;
+    }
+}
+
+// Tablet & Mobile (width < 992px)
+@media screen and (max-width: 991px) {
+    // Main
+    main {
+        display: none;
+    }
+
+    // Footer
+    footer {
+        display: none;
+    }
+}
+
+// Tablet ( 768px < width < 992px)
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .show-on-mobile {
+        display: none;
+    }
+}
+
+// Mobile ( width < 768px )
+@media screen and (max-width: 767px) {
+    // header
+    .header {
+        .wrapper {
+            width: 100%;
+        }
+
+        .logo {
+            width: 47px;
+        }
+
+        .navbar {
+            display: none;
+        }
+
+        .header__cta {
+            margin-left: auto;
+            margin-right: 44px;
+            width: 80px;
+            height: 30px;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .menu__checkbox {
+            display: none;
+        }
+
+        .menu__btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 24px;
+            height: 16px;
+        }
+
+        .menu__icon {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--background-color, #000);
+            visibility: hidden;
+            opacity: 0;
+
+            transition: opacity 0.2s linear, visibility 0.2s linear;
+        }
+
+        .menu__drawer {
+            position: fixed;
+            inset: 0;
+            width: 65%;
+            height: 100%;
+            padding: 32px 60px;
+            background: var(--background-color--dark-brown);
+            z-index: 2;
+            transform: translateX(-120%);
+            transition: 0.5s ease-out;
+
+            & .navbar__item {
+                display: block;
+                padding: 12px 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            & li:not(:first-child) .navbar__item {
+                margin-top: 30px;
+            }
+
+            & .active {
+                color: var(--primary-color);
+            }
+        }
+
+        .menu__checkbox:checked {
+            ~ .overlay {
+                visibility: visible;
+                opacity: 0.6;
+            }
+
+            ~ .menu__drawer {
+                transform: translateX(0);
+            }
+        }
+    }
+}
