@@ -19,7 +19,6 @@
 
         // service
         .service {
-            display: none;
         }
 
         // overView
@@ -50,6 +49,33 @@
         // testimonial
         .testimonial {
             display: none;
+        }
+    }
+
+    // service
+    .service {
+        .service__inner {
+            grid-template-columns: 1fr;
+            row-gap: 70px;
+        }
+
+        .service__item {
+            padding-top: 75px;
+        }
+
+        .service__separate {
+            width: 100%;
+
+            &::before {
+                background-repeat: repeat-x;
+                background-size: auto;
+                max-width: 100%;
+                top: 0;
+                right: 0;
+                left: 0;
+                margin: 0 auto;
+                transform: unset;
+            }
         }
     }
 
@@ -226,6 +252,23 @@
 
         .hero__cards {
             margin-top: 82px;
+        }
+    }
+
+    // service
+    .service {
+        padding: 40px 0;
+
+        .service__inner {
+            row-gap: 23px;
+            // padding: 0 60px;
+        }
+        .service__item {
+            padding-top: 33px;
+        }
+
+        .service__title {
+            font-size: 2rem;
         }
     }
 }
