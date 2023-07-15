@@ -1138,6 +1138,13 @@ body {
         border-radius: 31px;
         object-fit: cover;
     }
+
+    &__separate {
+        margin: 50px auto 0;
+        width: 90%;
+        height: 1px;
+        background: #282b2e;
+    }
 }
 
 // blog

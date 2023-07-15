@@ -135,7 +135,76 @@
 
         // feature-intro
         .feature-intro {
-            display: none;
+            padding: 40px 0;
+
+            &__inner {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    'heading'
+                    'cta-group'
+                    'images'
+                    'button';
+            }
+
+            &__heading {
+                font-size: 3rem;
+                line-height: 1.33333;
+                margin: 0 auto;
+            }
+
+            &__cta-group {
+                margin-top: 0;
+                padding: 30px 0 0;
+            }
+
+            &__cta {
+                padding: 19px 50px 15px 26px;
+                min-height: unset;
+            }
+
+            &__cta + &__cta {
+                margin-top: 11px;
+            }
+
+            &__cta-title {
+                font-size: 1.8rem;
+            }
+
+            &__cta-desc {
+                margin-top: 6px;
+                font-size: 1rem;
+                line-height: 2.2;
+            }
+
+            &__images {
+                margin-top: 70px;
+                min-height: unset;
+            }
+
+            &__img-wrapper {
+                position: relative;
+
+                &--top {
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                }
+
+                &--center {
+                    right: 0;
+                    top: 0;
+                    left: 0;
+                    transform: unset;
+                }
+            }
+
+            &__img-wrapper + .feature-intro__img-wrapper {
+                margin-top: 27px;
+            }
+
+            &__more {
+                margin: 60px auto 0;
+            }
         }
 
         // blog
@@ -191,6 +260,13 @@
             }
             .feature__heading {
                 justify-self: center;
+            }
+        }
+
+        // Feature-intro
+        .feature-intro {
+            &__img-wrapper {
+                margin: 0 auto;
             }
         }
     }
@@ -449,6 +525,13 @@
 
         .about__images {
             margin-top: 32px;
+        }
+    }
+
+    // feature-intro
+    .feature-intro {
+        &__img-wrapper {
+            width: 100%;
         }
     }
 

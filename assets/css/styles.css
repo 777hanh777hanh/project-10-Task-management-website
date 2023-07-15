@@ -1001,6 +1001,12 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.feature-intro__separate {
+  margin: 50px auto 0;
+  width: 90%;
+  height: 1px;
+  background: #282b2e;
+}
 
 .blog .blog__inner {
   padding: 70px 0;
