@@ -59,7 +59,30 @@
     background-position: center;
   }
   main .feature {
-    display: none;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  main .feature .feature__inner {
+    padding: 60px 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "image" "heading" "features";
+    gap: unset;
+  }
+  main .feature .feature__images {
+    max-width: 489px;
+    padding-right: 40px;
+  }
+  main .feature .feature__heading {
+    font-size: 3rem;
+  }
+  main .feature .feature__list {
+    margin-top: 50px;
+    row-gap: 34px;
+    grid-template-rows: auto;
+  }
+  main .feature .feature__item-image {
+    margin-top: 3px;
   }
   main .about {
     display: none;
@@ -95,6 +118,12 @@
   }
   .main .overView .overView__heading {
     text-align: center;
+  }
+  .main .feature .feature__images {
+    justify-self: center;
+  }
+  .main .feature .feature__heading {
+    justify-self: center;
   }
 }
 @media screen and (max-width: 767px) {

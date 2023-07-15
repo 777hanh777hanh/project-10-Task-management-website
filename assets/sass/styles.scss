@@ -815,7 +815,6 @@ body {
 
     .feature__inner {
         display: grid;
-        grid-template-rows: auto;
         grid-template-columns: 489px 1fr;
         grid-template-rows: repeat(auto-fit, minmax(100px, auto));
         grid-template-areas:
@@ -846,7 +845,7 @@ body {
         color: var(--text-color-white, #f9f9f9);
         font-size: 4rem;
         font-weight: 600;
-        line-height: 0.8666666666666667;
+        line-height: 1.25;
     }
 
     .feature__list {
@@ -863,6 +862,7 @@ body {
     .feature__item {
         --bg-icon: var(--primary-color);
         display: flex;
+        height: 100%;
         column-gap: 23px;
 
         &:nth-child(4n + 2) {
