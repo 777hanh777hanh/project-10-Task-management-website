@@ -814,8 +814,8 @@ body {
 .about .about__desc {
   margin-left: auto;
   margin-right: auto;
-  max-width: 747px;
   margin-top: 30px;
+  max-width: 747px;
   color: var(--background-color--gray, #858b93);
   font-size: 1.6rem;
   font-weight: 400;

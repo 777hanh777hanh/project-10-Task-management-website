@@ -85,7 +85,14 @@
     margin-top: 3px;
   }
   main .about {
-    display: none;
+    padding: 40px 0;
+  }
+  main .about .about__heading {
+    font-size: 3rem;
+    line-height: 1.3333;
+  }
+  main .about .highlight {
+    background-image: linear-gradient(180deg, #d1df2d 10.94%, #ff6f06 80.21%);
   }
   main .feature-intro {
     display: none;
@@ -307,6 +314,19 @@
   }
   .overView .overView__btn {
     width: 120px;
+  }
+  .about .about__heading {
+    max-width: 242px;
+  }
+  .about .about__desc {
+    margin-top: 20px;
+  }
+  .about .about__actions {
+    margin-top: 40px;
+    row-gap: 26px;
+  }
+  .about .about__images {
+    margin-top: 32px;
   }
   .hide-on-mobile {
     display: none !important;

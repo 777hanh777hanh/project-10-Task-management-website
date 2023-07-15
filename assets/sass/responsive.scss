@@ -121,7 +121,16 @@
 
         // about
         .about {
-            display: none;
+            padding: 40px 0;
+
+            .about__heading {
+                font-size: 3rem;
+                line-height: 1.3333;
+            }
+
+            .highlight {
+                background-image: linear-gradient(180deg, #d1df2d 10.94%, #ff6f06 80.21%);
+            }
         }
 
         // feature-intro
@@ -420,6 +429,26 @@
 
         .overView__btn {
             width: 120px;
+        }
+    }
+
+    // about
+    .about {
+        .about__heading {
+            max-width: 242px;
+        }
+
+        .about__desc {
+            margin-top: 20px;
+        }
+
+        .about__actions {
+            margin-top: 40px;
+            row-gap: 26px;
+        }
+
+        .about__images {
+            margin-top: 32px;
         }
     }
 
