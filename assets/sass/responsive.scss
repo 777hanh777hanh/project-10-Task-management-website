@@ -209,7 +209,37 @@
 
         // blog
         .blog {
-            display: none;
+            .blog__inner {
+                padding: 40px 0;
+            }
+
+            .blog__heading {
+                display: inline-block;
+                font-size: 3rem;
+                line-height: 1.33333;
+            }
+
+            .highlight {
+                background-image: linear-gradient(
+                    180deg,
+                    #f9d100 17.71%,
+                    rgba(129, 221, 37, 0) 100%,
+                    #ff8a00 100%
+                );
+            }
+
+            .blog__block {
+                margin-top: 50px;
+            }
+
+            .blog__images {
+                width: 100%;
+                height: auto;
+            }
+
+            .blog__cta {
+                bottom: 22px;
+            }
         }
 
         // testimonial
@@ -532,6 +562,20 @@
     .feature-intro {
         &__img-wrapper {
             width: 100%;
+        }
+    }
+
+    // blog
+    .blog {
+        .blog__block {
+            row-gap: 40px;
+        }
+
+        .blog__cta {
+            width: 128px;
+            height: 33px;
+            font-size: 1rem;
+            line-height: 1.8;
         }
     }
 

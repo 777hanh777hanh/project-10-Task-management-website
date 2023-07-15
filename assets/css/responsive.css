@@ -149,8 +149,26 @@
   main .feature-intro__more {
     margin: 60px auto 0;
   }
-  main .blog {
-    display: none;
+  main .blog .blog__inner {
+    padding: 40px 0;
+  }
+  main .blog .blog__heading {
+    display: inline-block;
+    font-size: 3rem;
+    line-height: 1.33333;
+  }
+  main .blog .highlight {
+    background-image: linear-gradient(180deg, #f9d100 17.71%, rgba(129, 221, 37, 0) 100%, #ff8a00 100%);
+  }
+  main .blog .blog__block {
+    margin-top: 50px;
+  }
+  main .blog .blog__images {
+    width: 100%;
+    height: auto;
+  }
+  main .blog .blog__cta {
+    bottom: 22px;
   }
   main .testimonial {
     display: none;
@@ -385,6 +403,15 @@
   }
   .feature-intro__img-wrapper {
     width: 100%;
+  }
+  .blog .blog__block {
+    row-gap: 40px;
+  }
+  .blog .blog__cta {
+    width: 128px;
+    height: 33px;
+    font-size: 1rem;
+    line-height: 1.8;
   }
   .hide-on-mobile {
     display: none !important;
