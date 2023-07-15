@@ -1276,16 +1276,6 @@ body {
   pointer-events: none;
   opacity: 0.3;
 }
-@media screen and (max-width: 991px) {
-  .testimonial .testimonial__block {
-    -moz-column-gap: 0;
-         column-gap: 0;
-  }
-  .testimonial .testimonial__item {
-    width: 100%;
-    flex-shrink: 0;
-  }
-}
 
 .footer {
   margin-top: 95px;
