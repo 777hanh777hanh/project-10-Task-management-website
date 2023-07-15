@@ -272,8 +272,13 @@
     }
 
     // Footer
-    footer {
-        display: none;
+    .footer {
+        margin-top: 40px;
+
+        .footer__inner {
+            padding-top: 40px;
+            padding-bottom: 44px;
+        }
     }
 }
 
@@ -323,6 +328,21 @@
             }
         }
     }
+
+    .footer {
+        .footer__logo {
+            width: 90px;
+        }
+
+        .footer__body {
+            margin-right: 0;
+            column-gap: 60px;
+        }
+
+        .footer__subscribe {
+            margin: 0;
+        }
+    }
 }
 
 // Mobile ( width < 768px )
@@ -355,12 +375,14 @@
         }
 
         .menu__btn {
+            box-sizing: content-box;
             display: inline-flex;
             justify-content: center;
             align-items: center;
 
             width: 24px;
-            height: 16px;
+            height: 100%;
+            padding: 6px 0 6px 12px;
         }
 
         .menu__icon {
@@ -639,6 +661,128 @@
 
         .testimonial__author-rate {
             flex-shrink: 0;
+        }
+    }
+
+    // footer
+    .footer {
+        .footer__top {
+            justify-content: center;
+        }
+
+        .footer__cta {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 27px;
+        }
+
+        .footer__cta-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.45455;
+        }
+
+        .footer__cta-btn {
+            width: 165px;
+            height: 55px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.55556;
+        }
+
+        .footer__body {
+            display: flex;
+            margin-top: 64px;
+            margin-right: 0;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer__subscribe {
+            display: flex;
+            margin: 0;
+            justify-content: flex-start;
+            align-items: center;
+            column-gap: 22px;
+        }
+
+        .footer__logo {
+            width: 51px;
+        }
+
+        .footer__form {
+            margin: 0;
+        }
+
+        .footer__input {
+            padding: 3px 12px 5px;
+            width: 172px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.83333;
+        }
+
+        .footer__menu {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .footer__menu-checkbox {
+            display: none;
+        }
+
+        .footer__menu-btn {
+            width: 24px;
+            height: 16px;
+            padding: 6px 0 6px 10px;
+        }
+
+        .footer__overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--background-color, #000);
+            visibility: hidden;
+            opacity: 0;
+            z-index: 10;
+
+            transition: opacity 0.2s linear, visibility 0.2s linear;
+        }
+
+        .footer__menu-drawer {
+            display: flex;
+            position: fixed;
+            width: 100%;
+            height: auto;
+            justify-content: space-evenly;
+            top: 0;
+            right: 0;
+            left: 0;
+            padding: 60px 32px;
+            background: var(--background-color--dark-brown);
+            z-index: 10;
+            transform: translateY(-100%);
+            transition: 0.5s ease-out;
+            overflow-y: auto;
+        }
+
+        .footer__menu-checkbox:checked {
+            ~ .footer__overlay {
+                visibility: visible;
+                opacity: 0.6;
+            }
+
+            ~ .footer__menu-drawer {
+                transform: translateY(0);
+            }
+        }
+
+        .footer__heading {
+            font-size: 18px;
+        }
+
+        .footer__link {
+            font-size: 14px;
         }
     }
 

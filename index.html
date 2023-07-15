@@ -1259,7 +1259,7 @@
                 <div class="footer__inner">
                     <div class="footer__top">
                         <!-- logo -->
-                        <div class="logo footer__logo">
+                        <div class="logo footer__logo hide-on-mobile">
                             <a href="#">
                                 <img
                                     loading="lazy"
@@ -1275,11 +1275,22 @@
                             <button class="btn footer__cta-btn">Get Started</button>
                         </div>
                     </div>
-                    <div class="footer__separate"></div>
+                    <div class="footer__separate hide-on-mobile"></div>
                     <div class="footer__body">
                         <!-- subscribe -->
                         <div class="footer__subscribe">
-                            <h4 class="footer__heading">Subscribe to our newsletter</h4>
+                            <h4 class="footer__heading hide-on-mobile">Subscribe to our newsletter</h4>
+                            <!-- logo -->
+                            <div class="logo footer__logo show-on-mobile">
+                                <a href="#">
+                                    <img
+                                        loading="lazy"
+                                        src="./assets/images/logo/logo.png"
+                                        alt="Task."
+                                        class="footer__logo__img"
+                                    />
+                                </a>
+                            </div>
                             <form action="" method="post" class="footer__form">
                                 <input type="text" class="footer__input" placeholder="Your Email Address" />
                                 <button class="footer__btn">
@@ -1301,7 +1312,7 @@
                                     </svg>
                                 </button>
                             </form>
-                            <div class="footer__socials">
+                            <div class="footer__socials hide-on-mobile">
                                 <a href="#!" class="footer__social">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -1342,7 +1353,7 @@
                         </div>
 
                         <!-- content -->
-                        <div class="footer__content">
+                        <div class="footer__content hide-on-mobile">
                             <div class="footer__items">
                                 <h4 class="footer__heading">Services</h4>
                                 <a href="#!" class="footer__link">Email Marketing</a>
@@ -1362,6 +1373,20 @@
                                 <a href="#!" class="footer__link">FAQs</a>
                                 <a href="#!" class="footer__link">Contact Us</a>
                             </div>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="footer__menu show-on-mobile">
+                            <input type="checkbox" name="" id="footer__menu" class="footer__menu-checkbox" />
+                            <label for="footer__menu" class="footer__menu-btn">
+                                <img
+                                    src="./assets/images/icons/menu-ic.svg"
+                                    alt=""
+                                    class="footer__menu-icon"
+                                />
+                            </label>
+                            <label for="footer__menu" class="footer__overlay"></label>
+                            <div class="footer__menu-drawer"></div>
                         </div>
                     </div>
                 </div>

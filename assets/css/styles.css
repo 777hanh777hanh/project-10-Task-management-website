@@ -1452,6 +1452,7 @@ body {
 }
 .footer .footer__link {
   display: block;
+  padding: 8px 0;
   color: var(--background-color--gray, #858b93);
   font-size: 1.8rem;
   font-weight: 400;

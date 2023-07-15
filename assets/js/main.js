@@ -114,3 +114,7 @@ window.onresize = () => {
 };
 
 // end -----  navigate of testimonials //
+
+// Copy content footer from PC to Mobile
+
+$('.footer__menu-drawer').innerHTML = $('.footer__content').innerHTML;
