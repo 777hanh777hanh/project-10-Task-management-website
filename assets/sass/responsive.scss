@@ -662,6 +662,27 @@
         .testimonial__author-rate {
             flex-shrink: 0;
         }
+
+        .testimonial__pagination {
+            display: flex !important;
+            margin-top: 21px;
+            justify-content: center;
+            column-gap: 5px;
+
+            &-item {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--text-color-white);
+                opacity: 0.4;
+                transition: 0.2s ease;
+
+                &.active {
+                    background: var(--primary-color-dark-yellow);
+                    opacity: 1;
+                }
+            }
+        }
     }
 
     // footer
